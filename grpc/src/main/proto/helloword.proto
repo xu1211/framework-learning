@@ -1,0 +1,26 @@
+syntax = "proto3";
+
+package helloword;
+
+option java_package = "com.examples.grpc";
+option java_outer_classname = "Helloword";
+
+service helloword {
+    rpc SayHello (helloRequest) returns (helloResponse);
+}
+
+// 请求消息
+message helloRequest {
+    // 姓名
+    string name = 1;
+    // 密码
+    int32 password = 2;
+}
+
+// 响应消息
+message helloResponse {
+    // 错误码
+    int32 error = 1;
+    // 消息
+    string message = 2;
+}
